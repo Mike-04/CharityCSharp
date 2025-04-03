@@ -12,3 +12,4 @@ C:\Users\White Fox\RiderProjects\Charity\Charity.Domain\obj\Debug\net8.0\refint\
 C:\Users\White Fox\RiderProjects\Charity\Charity.Domain\obj\Debug\net8.0\Charity.Domain.pdb
 C:\Users\White Fox\RiderProjects\Charity\Charity.Domain\obj\Debug\net8.0\Charity.Domain.genruntimeconfig.cache
 C:\Users\White Fox\RiderProjects\Charity\Charity.Domain\obj\Debug\net8.0\ref\Charity.Domain.dll
+C:\Users\White Fox\RiderProjects\Charity\Charity.Domain\obj\Debug\net8.0\Charity.Domain.sourcelink.json

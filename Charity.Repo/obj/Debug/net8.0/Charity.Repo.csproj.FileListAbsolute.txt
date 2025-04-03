@@ -15,3 +15,4 @@ C:\Users\White Fox\RiderProjects\Charity\Charity.Repo\obj\Debug\net8.0\refint\Ch
 C:\Users\White Fox\RiderProjects\Charity\Charity.Repo\obj\Debug\net8.0\Charity.Repo.pdb
 C:\Users\White Fox\RiderProjects\Charity\Charity.Repo\obj\Debug\net8.0\Charity.Repo.genruntimeconfig.cache
 C:\Users\White Fox\RiderProjects\Charity\Charity.Repo\obj\Debug\net8.0\ref\Charity.Repo.dll
+C:\Users\White Fox\RiderProjects\Charity\Charity.Repo\obj\Debug\net8.0\Charity.Repo.sourcelink.json

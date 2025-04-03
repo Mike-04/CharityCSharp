@@ -81,16 +81,17 @@ namespace Charity
             }
         }
 
-        private void SearchBar_TextChanged(object sender, EventArgs e)
-        {
-            // //use findbyname function   
-            // DonatorTable.Rows.Clear();
-            // foreach (Donator donor in service.DonatorService.FindByName(SearchBar.Text))
-            // {
-            //     DonatorTable.Rows.Add(donor.Nume, donor.Adresa, donor.NumarTelefon);
-            // }
-
-        }
+        private async void SearchBar_TextChanged(object sender, EventArgs e)
+            {
+                // Add a delay of 500 milliseconds
+                await Task.Delay(250);
+            
+                DonatorTable.Rows.Clear();
+                foreach (Donator donor in service.GetDonators(SearchBar.Text))
+                {
+                    DonatorTable.Rows.Add(donor.Nume, donor.Adresa, donor.NumarTelefon);
+                }
+            }
 
         private void DonatorTable_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
