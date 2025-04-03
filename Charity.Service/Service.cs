@@ -1,0 +1,53 @@
+﻿using Charity.Domain;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Charity.Service
+{
+    public class Service : IAppService
+    {
+        public CazCaritabilService CazCaritabilService;
+        public UserService UserService;
+        public DonatorService DonatorService;
+        public DonatieService DonatieService;
+        public Service(UserService userService,CazCaritabilService cazCaritabilService, DonatorService donatorService, DonatieService donatieService)
+        {
+            this.UserService = userService;
+            this.CazCaritabilService = cazCaritabilService;
+            this.DonatorService = donatorService;
+            this.DonatieService = donatieService;
+        }
+
+        public void addDonation(Donator selectedDonor, CazCaritabil selectedCase, double v)
+        {
+            //get the caz and add the donation to its value
+            selectedCase.AdaugaDonatie(v);
+            //update the caz in repository
+            CazCaritabilService.Update(selectedCase.Id, selectedCase.Nume, selectedCase.SumaAdunata);
+            //add the donation to the repository
+            DonatieService.Add(selectedDonor, selectedCase, v);
+
+        }
+
+        public User Login(string username, string password)
+        {
+            if(UserService.CheckUser(username, password))
+            {
+                return UserService.FindByUsername(username);
+            }
+            else
+            {
+                throw new Exception("Invalid username or password");
+            }
+            
+        }
+
+        public IEnumerable<CazCaritabil> GetAllCazuri()
+        {
+            return CazCaritabilService.GetAll();
+        }
+    }
+}

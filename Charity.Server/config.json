@@ -1,0 +1,19 @@
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Data Source=C:/Users/White Fox/IdeaProjects/Charity/charity.db"
+  },
+  "Logging": {
+    "LogFilePath": "C:/Users/White Fox/RiderProjects/Charity/logs/log.txt"
+  },
+  "ConfigLog":{
+    "ConsoleLog": true,
+    "FileLog": true,
+    "LogLevel": "Debug",
+    "LogFormat": "DateTime, LogLevel, Message",
+    "LogFileFormat": "DateTime, LogLevel, Message"
+  },
+  "Server": {
+    "Host": "127.0.0.1",
+    "Port": 5000
+  }
+}

@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Charity.Domain\Charity.Domain.csproj" />
+      <ProjectReference Include="..\Charity.Network\Charity.Network.csproj" />
+      <ProjectReference Include="..\Charity.Repo\Charity.Repo.csproj" />
+      <ProjectReference Include="..\Charity.Service\Charity.Service.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Jackletter.Microsoft.Extensions.Logging.File" Version="2.1.0" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="10.0.0-preview.2.25163.2" />
+    </ItemGroup>
+
+</Project>

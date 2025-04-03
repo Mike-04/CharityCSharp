@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWindowsForms>true</UseWindowsForms>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Charity.Domain\Charity.Domain.csproj" />
+      <ProjectReference Include="..\Charity.Service\Charity.Service.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Update="Forms\LoggedIn.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>LoggedIn.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Forms\LoggedIn.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>LoggedIn.cs</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+</Project>

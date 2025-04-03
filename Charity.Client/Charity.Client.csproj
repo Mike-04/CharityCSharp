@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <Nullable>enable</Nullable>
+        <UseWindowsForms>true</UseWindowsForms>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <TargetFramework>net8.0-windows</TargetFramework>
+        <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Charity.Domain\Charity.Domain.csproj" />
+      <ProjectReference Include="..\Charity.Network\Charity.Network.csproj" />
+      <ProjectReference Include="..\Charity.Service\Charity.Service.csproj" />
+      <ProjectReference Include="..\Charity.UI\Charity.UI.csproj" />
+    </ItemGroup>
+
+    
+</Project>
