@@ -86,3 +86,4 @@ C:\Users\White Fox\RiderProjects\Charity\Charity.Server\obj\Debug\net8.0\refint\
 C:\Users\White Fox\RiderProjects\Charity\Charity.Server\obj\Debug\net8.0\Charity.Server.pdb
 C:\Users\White Fox\RiderProjects\Charity\Charity.Server\obj\Debug\net8.0\Charity.Server.genruntimeconfig.cache
 C:\Users\White Fox\RiderProjects\Charity\Charity.Server\obj\Debug\net8.0\ref\Charity.Server.dll
+C:\Users\White Fox\RiderProjects\Charity\Charity.Server\obj\Debug\net8.0\Charity.Server.sourcelink.json

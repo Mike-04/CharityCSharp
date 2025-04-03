@@ -22,3 +22,4 @@ C:\Users\White Fox\RiderProjects\Charity\Charity.UI\obj\Debug\net8.0-windows\ref
 C:\Users\White Fox\RiderProjects\Charity\Charity.UI\obj\Debug\net8.0-windows\Charity.UI.pdb
 C:\Users\White Fox\RiderProjects\Charity\Charity.UI\obj\Debug\net8.0-windows\Charity.UI.genruntimeconfig.cache
 C:\Users\White Fox\RiderProjects\Charity\Charity.UI\obj\Debug\net8.0-windows\ref\Charity.UI.dll
+C:\Users\White Fox\RiderProjects\Charity\Charity.UI\obj\Debug\net8.0-windows\Charity.UI.sourcelink.json

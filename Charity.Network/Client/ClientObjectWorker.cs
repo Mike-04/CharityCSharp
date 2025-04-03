@@ -29,6 +29,12 @@ public class ClientObjectWorker : ClientObjectWorkerBase
         {
             return ResponseOrError(() => new GetCazuriResponse(service.GetAllCazuri().Select(c => CazCaritabilDTO.FromCazCaritabil(c)).ToArray()));
         }
+
+        if (request is GetDonatorsRequest)
+        {
+            String searchString = (request as GetDonatorsRequest).SearchString;
+            return ResponseOrError(() => new GetDonatorsResponse(service.GetDonators(searchString).Select(d => DonatorDTO.FromDonator(d)).ToArray()));
+        }
         return new ErrorResponse("Unknown request");
     }
 

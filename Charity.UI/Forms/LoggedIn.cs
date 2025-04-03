@@ -73,12 +73,12 @@ namespace Charity
 
         private void PopulateDonorTable()
         {
-            // DonatorTable.Rows.Clear();
-            // //populate the DonorName, DonorAdress and Phone columns
-            // foreach (Donator donor in service.DonatorService.GetAll())
-            // {
-            //     DonatorTable.Rows.Add(donor.Nume, donor.Adresa, donor.NumarTelefon);
-            // }
+            DonatorTable.Rows.Clear();
+            //populate the DonorName, DonorAdress and Phone columns
+            foreach (Donator donor in service.GetDonators(""))
+            {
+                DonatorTable.Rows.Add(donor.Nume, donor.Adresa, donor.NumarTelefon);
+            }
         }
 
         private void SearchBar_TextChanged(object sender, EventArgs e)

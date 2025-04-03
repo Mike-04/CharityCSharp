@@ -37,4 +37,17 @@ internal class ServiceImpl : IAppService
             throw new Exception("GetAllCazuri failed", e);
         }
     }
+
+    public IEnumerable<Donator> GetDonators(string searchString)
+    {
+        try
+        {
+            IEnumerable<Donator> donators = innerService.GetDonators(searchString);
+            return donators;
+        }
+        catch (Exception e)
+        {
+            throw new Exception("GetDonators failed", e);
+        }
+    }
 }

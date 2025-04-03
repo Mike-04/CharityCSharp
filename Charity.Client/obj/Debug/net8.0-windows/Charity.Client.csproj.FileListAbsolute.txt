@@ -76,3 +76,4 @@ C:\Users\White Fox\RiderProjects\Charity\Charity.Client\obj\Debug\net8.0-windows
 C:\Users\White Fox\RiderProjects\Charity\Charity.Client\obj\Debug\net8.0-windows\Charity.Client.pdb
 C:\Users\White Fox\RiderProjects\Charity\Charity.Client\obj\Debug\net8.0-windows\Charity.Client.genruntimeconfig.cache
 C:\Users\White Fox\RiderProjects\Charity\Charity.Client\obj\Debug\net8.0-windows\ref\Charity.Client.dll
+C:\Users\White Fox\RiderProjects\Charity\Charity.Client\obj\Debug\net8.0-windows\Charity.Client.sourcelink.json

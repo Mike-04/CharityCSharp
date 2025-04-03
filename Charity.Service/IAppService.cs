@@ -6,4 +6,5 @@ public interface IAppService
 {
     public User Login(string username, string password);
     public IEnumerable<CazCaritabil> GetAllCazuri();
+    public IEnumerable<Donator> GetDonators(String searchString);
 }

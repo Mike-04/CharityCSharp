@@ -45,6 +45,23 @@ public class ServiceObjectProxy : ServiceObjectProxyBase,IAppService
         }
     }
 
+    public IEnumerable<Donator> GetDonators(string searchString)
+    {
+        InitializeConnection();
+        SendRequest(new GetDonatorsRequest(searchString));
+        try
+        {
+            var resp = AwaitResponse<GetDonatorsResponse>();
+            return resp.Donators.Select(d => d.ToDonator());
+        }
+        catch (Exception e)
+        {
+            CloseConnection();
+            Console.WriteLine(e);
+            throw new ProxyException(e);
+        }
+    }
+
     private R AwaitResponse<R>() where R : class, IResponse
     {
         var resp = ReadResponse();

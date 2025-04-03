@@ -19,3 +19,4 @@ C:\Users\White Fox\RiderProjects\Charity\Charity.Network\obj\Debug\net8.0\refint
 C:\Users\White Fox\RiderProjects\Charity\Charity.Network\obj\Debug\net8.0\Charity.Network.pdb
 C:\Users\White Fox\RiderProjects\Charity\Charity.Network\obj\Debug\net8.0\Charity.Network.genruntimeconfig.cache
 C:\Users\White Fox\RiderProjects\Charity\Charity.Network\obj\Debug\net8.0\ref\Charity.Network.dll
+C:\Users\White Fox\RiderProjects\Charity\Charity.Network\obj\Debug\net8.0\Charity.Network.sourcelink.json

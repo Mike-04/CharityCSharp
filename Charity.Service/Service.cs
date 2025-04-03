@@ -49,5 +49,10 @@ namespace Charity.Service
         {
             return CazCaritabilService.GetAll();
         }
+
+        public IEnumerable<Donator> GetDonators(string searchString)
+        {
+            return DonatorService.FindByName(searchString);
+        }
     }
 }
