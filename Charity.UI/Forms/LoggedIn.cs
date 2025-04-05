@@ -9,11 +9,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Charity.Service.Observer;
 
 namespace Charity
 {
 
-    public partial class LoggedIn : Form
+    public partial class LoggedIn : Form, IObserver
     {
         private User loggedUser;
         private IAppService service;
@@ -35,28 +36,35 @@ namespace Charity
             PopulateDonorTable();
 
         }
+        
+        void IObserver.Update()
+        {
+            //update the tables
+            PopulateCaseTable();
+            PopulateDonorTable();
+        }
 
         private void CazuriCaritabileView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            // //get the edited row
-            // DataGridViewRow row = CazuriCaritabileView.Rows[e.RowIndex];
-            // //check if the caz is in the list or is a new one
-            // if (e.RowIndex < service.CazCaritabilService.GetAll().Count)
-            // {
-            //     //update the caz
-            //     CazCaritabil caz = service.CazCaritabilService.GetAll()[e.RowIndex];
-            //     service.CazCaritabilService.Update(caz.Id, row.Cells[0].Value.ToString(), double.Parse(row.Cells[1].Value.ToString()));
-            // }
-            // else
-            // {
-            //     //check if all fields are filled
-            //     if (row.Cells[0].Value == null || row.Cells[1].Value == null)
-            //     {
-            //         return;
-            //     }
-            //     else
-            //         service.CazCaritabilService.Add(row.Cells[0].Value.ToString(), double.Parse(row.Cells[1].Value.ToString()));
-            // }
+            //get the edited row
+            DataGridViewRow row = CazuriCaritabileView.Rows[e.RowIndex];
+            //check if the caz is in the list or is a new one
+            if (e.RowIndex < service.GetAllCazuri().ToList().Count)
+            {
+                //update the caz
+                CazCaritabil caz = service.GetAllCazuri().ToList()[e.RowIndex];
+                service.UpdateCazCaritabil(caz.Id, row.Cells[0].Value.ToString(), double.Parse(row.Cells[1].Value.ToString()));
+            }
+            else
+            {
+                //check if all fields are filled
+                if (row.Cells[0].Value == null || row.Cells[1].Value == null)
+                {
+                    return;
+                }
+                else
+                    service.AddCazCaritabil(row.Cells[0].Value.ToString(), double.Parse(row.Cells[1].Value.ToString()));
+            }
 
         }
 
@@ -95,58 +103,58 @@ namespace Charity
 
         private void DonatorTable_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            // //get the edited row
-            // DataGridViewRow row = DonatorTable.Rows[e.RowIndex];
-            // //check if the donor is in the list or is a new one
-            // if (e.RowIndex < service.DonatorService.GetAll().Count)
-            // {
-            //     //update the donor
-            //     Donator donor = service.DonatorService.GetAll()[e.RowIndex];
-            //     service.DonatorService.Update(donor.Id, row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString(), row.Cells[2].Value.ToString());
-            // }
-            // else
-            // {
-            //     //check if all fields are filled
-            //     if (row.Cells[0].Value == null || row.Cells[1].Value == null || row.Cells[2].Value == null)
-            //     {
-            //         return;
-            //     }
-            //     else
-            //         service.DonatorService.Add(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString(), row.Cells[2].Value.ToString());
-            // }
+            //get the edited row
+            DataGridViewRow row = DonatorTable.Rows[e.RowIndex];
+            //check if the donor is in the list or is a new one
+            if (e.RowIndex < service.GetDonators(SearchBar.Text).ToList().Count)
+            {
+                //update the donor
+                Donator donor = service.GetDonators(SearchBar.Text).ToList()[e.RowIndex];
+                service.UpdateDonator(donor.Id, row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString(), row.Cells[2].Value.ToString());
+            }
+            else
+            {
+                //check if all fields are filled
+                if (row.Cells[0].Value == null || row.Cells[1].Value == null || row.Cells[2].Value == null)
+                {
+                    return;
+                }
+                else
+                    service.AddDonator(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString(), row.Cells[2].Value.ToString());
+            }
         }
 
         private void CazuriCaritabileView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // // check if the selected caz has all the fields filled
-            // if (e.RowIndex >= service.CazCaritabilService.GetAll().Count)
-            // {
-            //     return;
-            // }
-            // selectedCase = service.CazCaritabilService.GetAll()[e.RowIndex];
+            // check if the selected caz has all the fields filled
+            if (e.RowIndex >= service.GetAllCazuri().ToList().Count)
+            {
+                return;
+            }
+            selectedCase = service.GetAllCazuri().ToList()[e.RowIndex];
         }
 
         private void DonatorTable_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // // check if the selected donor has all the fields filled
-            // if (e.RowIndex >= service.DonatorService.GetAll().Count)
-            // {
-            //     return;
-            // }
-            // selectedDonor = service.DonatorService.GetAll()[e.RowIndex];
+            // check if the selected donor has all the fields filled
+            if (e.RowIndex >= service.GetDonators(SearchBar.Text).ToList().Count)
+            {
+                return;
+            }
+            selectedDonor = service.GetDonators(SearchBar.Text).ToList()[e.RowIndex];
         }
 
         private void Donate_Click(object sender, EventArgs e)
         {
-        //     //open a message box with the selected caz and donor
-        //     if (selectedCase != null && selectedDonor != null)
-        //     {
-        //         MessageBox.Show("Donation made by " + selectedDonor.Nume + " to " + selectedCase.Nume);
-        //         //create a new Donatie
-        //         service.addDonation(selectedDonor, selectedCase, double.Parse(Amount.Text));
-        //         //update the tables
-        //         PopulateCaseTable();
-        //     }
+            //open a message box with the selected caz and donor
+            if (selectedCase != null && selectedDonor != null)
+            {
+                MessageBox.Show("Donation made by " + selectedDonor.Nume + " to " + selectedCase.Nume);
+                //create a new Donatie
+                service.addDonation(selectedDonor, selectedCase, double.Parse(Amount.Text));
+                //update the tables
+                PopulateCaseTable();
+            }
         }
     }
 }

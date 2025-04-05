@@ -32,6 +32,26 @@ namespace Charity.Service
 
         }
 
+        public void AddCazCaritabil(string nume, double sumaAdunata)
+        {
+            CazCaritabilService.Add(nume, sumaAdunata);
+        }
+
+        public void UpdateCazCaritabil(Guid id, string nume, double sumaAdunata)
+        {
+            CazCaritabilService.Update(id, nume, sumaAdunata);
+        }
+
+        public void AddDonator(string nume, string adresa, string telefon)
+        {
+            DonatorService.Add(nume, adresa, telefon);
+        }
+
+        public void UpdateDonator(Guid id, string nume, string adresa, string telefon)
+        {
+            DonatorService.Update(id, nume, adresa, telefon);
+        }
+
         public User Login(string username, string password)
         {
             if(UserService.CheckUser(username, password))
