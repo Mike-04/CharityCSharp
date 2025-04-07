@@ -1,22 +1,28 @@
 ﻿using Charity.Domain;
 using Charity.Service;
+using Charity.Service.Observer;
 
 namespace Charity.Server;
 
-internal class ServiceImpl : IAppService
+internal class ServiceImpl : IAppService ,ISubject
 {
     private readonly IAppService innerService;
+    private readonly List<IObserver> observers = new List<IObserver>();
     
     public ServiceImpl(IAppService innerService)
     {
         this.innerService = innerService;
     }
 
-    public User Login(string username, string password)
+    public User Login(string username, string password,IObserver client)
     {
         try
         {
-            User user =innerService.Login(username, password);
+            User user =innerService.Login(username, password,client);
+            RegisterObserver(client);
+            Console.WriteLine($"User {username} logged in");
+            //write the observer to console
+            Console.WriteLine($"Observer {client.ToString()} registered");
             return user;
         }
         catch (Exception e)
@@ -56,6 +62,7 @@ internal class ServiceImpl : IAppService
         try
         {
             innerService.addDonation(selectedDonor, selectedCase, v);
+            NotifyObservers();
         }
         catch (Exception e)
         {
@@ -68,6 +75,7 @@ internal class ServiceImpl : IAppService
         try
         {
             innerService.AddCazCaritabil(nume, sumaAdunata);
+            NotifyObservers();
         }
         catch (Exception e)
         {
@@ -80,6 +88,7 @@ internal class ServiceImpl : IAppService
         try
         {
             innerService.UpdateCazCaritabil(id, nume, sumaAdunata);
+            NotifyObservers();
         }
         catch (Exception e)
         {
@@ -92,6 +101,7 @@ internal class ServiceImpl : IAppService
         try
         {
             innerService.AddDonator(nume, adresa, telefon);
+            NotifyObservers();
         }
         catch (Exception e)
         {
@@ -104,10 +114,29 @@ internal class ServiceImpl : IAppService
         try
         {
             innerService.UpdateDonator(id, nume, adresa, telefon);
+            NotifyObservers();
         }
         catch (Exception e)
         {
             throw new Exception("UpdateDonator failed", e);
+        }
+    }
+
+    public void RegisterObserver(IObserver observer)
+    {
+        observers.Add(observer);
+    }
+
+    public void RemoveObserver(IObserver observer)
+    {
+        observers.Remove(observer);
+    }
+
+    public void NotifyObservers()
+    {
+        foreach (var observer in observers)
+        {
+            observer.Update();
         }
     }
 }

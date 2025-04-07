@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            UserLabel = new Label();
-            CazuriCaritabileView = new DataGridView();
-            Nume = new DataGridViewTextBoxColumn();
-            Suma = new DataGridViewTextBoxColumn();
-            DonatorTable = new DataGridView();
-            DonorName = new DataGridViewTextBoxColumn();
-            DonorAdress = new DataGridViewTextBoxColumn();
-            Phone = new DataGridViewTextBoxColumn();
-            Donate = new Button();
-            CharityLabel = new Label();
-            Amount = new TextBox();
-            SearchBar = new TextBox();
+            UserLabel = new System.Windows.Forms.Label();
+            CazuriCaritabileView = new System.Windows.Forms.DataGridView();
+            Nume = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            Suma = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            DonatorTable = new System.Windows.Forms.DataGridView();
+            DonorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            DonorAdress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            Donate = new System.Windows.Forms.Button();
+            CharityLabel = new System.Windows.Forms.Label();
+            Amount = new System.Windows.Forms.TextBox();
+            SearchBar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)CazuriCaritabileView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DonatorTable).BeginInit();
             SuspendLayout();
@@ -47,23 +47,23 @@
             // UserLabel
             // 
             UserLabel.AutoSize = true;
-            UserLabel.Location = new Point(12, 11);
+            UserLabel.Location = new System.Drawing.Point(12, 11);
             UserLabel.Name = "UserLabel";
-            UserLabel.Size = new Size(41, 20);
+            UserLabel.Size = new System.Drawing.Size(41, 20);
             UserLabel.TabIndex = 0;
             UserLabel.Text = "User:";
             // 
             // CazuriCaritabileView
             // 
-            CazuriCaritabileView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            CazuriCaritabileView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            CazuriCaritabileView.Columns.AddRange(new DataGridViewColumn[] { Nume, Suma });
-            CazuriCaritabileView.Location = new Point(12, 34);
+            CazuriCaritabileView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            CazuriCaritabileView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            CazuriCaritabileView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { Nume, Suma });
+            CazuriCaritabileView.Location = new System.Drawing.Point(12, 34);
             CazuriCaritabileView.Name = "CazuriCaritabileView";
             CazuriCaritabileView.RowHeadersWidth = 51;
-            CazuriCaritabileView.ScrollBars = ScrollBars.Vertical;
-            CazuriCaritabileView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            CazuriCaritabileView.Size = new Size(413, 505);
+            CazuriCaritabileView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            CazuriCaritabileView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            CazuriCaritabileView.Size = new System.Drawing.Size(413, 505);
             CazuriCaritabileView.TabIndex = 1;
             CazuriCaritabileView.CellClick += CazuriCaritabileView_CellClick;
             CazuriCaritabileView.CellEndEdit += CazuriCaritabileView_CellEndEdit;
@@ -73,22 +73,24 @@
             Nume.HeaderText = "Nume";
             Nume.MinimumWidth = 6;
             Nume.Name = "Nume";
+            Nume.Width = 180;
             // 
             // Suma
             // 
             Suma.HeaderText = "Suma";
             Suma.MinimumWidth = 6;
             Suma.Name = "Suma";
+            Suma.Width = 180;
             // 
             // DonatorTable
             // 
-            DonatorTable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            DonatorTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DonatorTable.Columns.AddRange(new DataGridViewColumn[] { DonorName, DonorAdress, Phone });
-            DonatorTable.Location = new Point(431, 93);
+            DonatorTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            DonatorTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DonatorTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { DonorName, DonorAdress, Phone });
+            DonatorTable.Location = new System.Drawing.Point(431, 93);
             DonatorTable.Name = "DonatorTable";
             DonatorTable.RowHeadersWidth = 51;
-            DonatorTable.Size = new Size(414, 446);
+            DonatorTable.Size = new System.Drawing.Size(414, 446);
             DonatorTable.TabIndex = 2;
             DonatorTable.CellClick += DonatorTable_CellClick;
             DonatorTable.CellEndEdit += DonatorTable_CellEndEdit;
@@ -98,24 +100,27 @@
             DonorName.HeaderText = "Nume";
             DonorName.MinimumWidth = 6;
             DonorName.Name = "DonorName";
+            DonorName.Width = 120;
             // 
             // DonorAdress
             // 
             DonorAdress.HeaderText = "Address";
             DonorAdress.MinimumWidth = 6;
             DonorAdress.Name = "DonorAdress";
+            DonorAdress.Width = 121;
             // 
             // Phone
             // 
             Phone.HeaderText = "Telefon";
             Phone.MinimumWidth = 6;
             Phone.Name = "Phone";
+            Phone.Width = 120;
             // 
             // Donate
             // 
-            Donate.Location = new Point(751, 30);
+            Donate.Location = new System.Drawing.Point(751, 30);
             Donate.Name = "Donate";
-            Donate.Size = new Size(94, 33);
+            Donate.Size = new System.Drawing.Size(94, 33);
             Donate.TabIndex = 3;
             Donate.Text = "Donate";
             Donate.UseVisualStyleBackColor = true;
@@ -124,34 +129,34 @@
             // CharityLabel
             // 
             CharityLabel.AutoSize = true;
-            CharityLabel.Location = new Point(439, 37);
+            CharityLabel.Location = new System.Drawing.Point(439, 37);
             CharityLabel.Name = "CharityLabel";
-            CharityLabel.Size = new Size(55, 20);
+            CharityLabel.Size = new System.Drawing.Size(55, 20);
             CharityLabel.TabIndex = 4;
             CharityLabel.Text = "Charity";
             // 
             // Amount
             // 
-            Amount.Location = new Point(511, 33);
+            Amount.Location = new System.Drawing.Point(511, 33);
             Amount.Name = "Amount";
             Amount.PlaceholderText = "Enter Amount";
-            Amount.Size = new Size(234, 27);
+            Amount.Size = new System.Drawing.Size(234, 27);
             Amount.TabIndex = 5;
             // 
             // SearchBar
             // 
-            SearchBar.Location = new Point(431, 64);
+            SearchBar.Location = new System.Drawing.Point(431, 64);
             SearchBar.Name = "SearchBar";
             SearchBar.PlaceholderText = "Search";
-            SearchBar.Size = new Size(414, 27);
+            SearchBar.Size = new System.Drawing.Size(414, 27);
             SearchBar.TabIndex = 6;
             SearchBar.TextChanged += SearchBar_TextChanged;
             // 
             // LoggedIn
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(853, 551);
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(853, 551);
             Controls.Add(SearchBar);
             Controls.Add(Amount);
             Controls.Add(CharityLabel);
@@ -159,8 +164,8 @@
             Controls.Add(DonatorTable);
             Controls.Add(CazuriCaritabileView);
             Controls.Add(UserLabel);
-            Name = "LoggedIn";
             Text = "Logged In";
+            FormClosed += LoggedIn_FormClosed;
             Load += LoggedIn_Load;
             ((System.ComponentModel.ISupportInitialize)CazuriCaritabileView).EndInit();
             ((System.ComponentModel.ISupportInitialize)DonatorTable).EndInit();

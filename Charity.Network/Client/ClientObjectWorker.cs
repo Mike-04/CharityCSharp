@@ -2,10 +2,11 @@
 using Charity.Network.DTO;
 using Charity.Network.ObjectProtocol;
 using Charity.Service;
+using Charity.Service.Observer;
 
 namespace Charity.Network.Client;
 
-public class ClientObjectWorker : ClientObjectWorkerBase
+public class ClientObjectWorker : ClientObjectWorkerBase,IObserver
 {
     IAppService service;
     public ClientObjectWorker(IAppService service, TcpClient connection) : base(connection)
@@ -21,7 +22,7 @@ public class ClientObjectWorker : ClientObjectWorkerBase
             var password = (request as LoginUserRequest).Password;
             return ResponseOrError(() =>
             {
-                var user = service.Login(username, password);
+                var user = service.Login(username, password,this);
                 return new LoginUserResponse(UserDTO.FromUser(user));
             });
         }
@@ -106,5 +107,14 @@ public class ClientObjectWorker : ClientObjectWorkerBase
         {
             return new ErrorResponse(e.Message);
         }
+    }
+
+    public void Update()
+    {
+        //print the message
+        Console.WriteLine("The database has been updated!");
+        //update the tables
+        var response = new UpdateResponse();
+        SendResponse(response);
     }
 }

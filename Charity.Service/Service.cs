@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Charity.Service.Observer;
 
 namespace Charity.Service
 {
@@ -52,7 +53,12 @@ namespace Charity.Service
             DonatorService.Update(id, nume, adresa, telefon);
         }
 
-        public User Login(string username, string password)
+        public void Logout(String username,IObserver client)
+        {
+            return;
+        }
+
+        public User Login(string username, string password,IObserver client = null)
         {
             if(UserService.CheckUser(username, password))
             {

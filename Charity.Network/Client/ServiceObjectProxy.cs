@@ -2,6 +2,7 @@
 using Charity.Network.DTO;
 using Charity.Network.ObjectProtocol;
 using Charity.Service;
+using Charity.Service.Observer;
 
 namespace Charity.Network.Client;
 
@@ -12,9 +13,10 @@ public class ServiceObjectProxy : ServiceObjectProxyBase,IAppService
         
     }
     
-    public User Login(string username, string password)
+    public User Login(string username, string password,IObserver client)
     {
         InitializeConnection();
+        Client = client;
         SendRequest(new LoginUserRequest(username, password));
         try
         {
@@ -31,7 +33,7 @@ public class ServiceObjectProxy : ServiceObjectProxyBase,IAppService
 
     public IEnumerable<CazCaritabil> GetAllCazuri()
     {
-        InitializeConnection();
+        TestConnectionOpen();
         SendRequest(new GetCazuriRequest());
         try
         {
@@ -48,7 +50,7 @@ public class ServiceObjectProxy : ServiceObjectProxyBase,IAppService
 
     public IEnumerable<Donator> GetDonators(string searchString)
     {
-        InitializeConnection();
+        TestConnectionOpen();
         SendRequest(new GetDonatorsRequest(searchString));
         try
         {
@@ -57,7 +59,6 @@ public class ServiceObjectProxy : ServiceObjectProxyBase,IAppService
         }
         catch (Exception e)
         {
-            CloseConnection();
             Console.WriteLine(e);
             throw new ProxyException(e);
         }
@@ -65,7 +66,7 @@ public class ServiceObjectProxy : ServiceObjectProxyBase,IAppService
 
     public void addDonation(Donator selectedDonor, CazCaritabil selectedCase, double v)
     {
-        InitializeConnection();
+        TestConnectionOpen();
         
         SendRequest(new AddDonationRequest(DonatorDTO.FromDonator(selectedDonor),CazCaritabilDTO.FromCazCaritabil(selectedCase),v));
         try
@@ -76,7 +77,6 @@ public class ServiceObjectProxy : ServiceObjectProxyBase,IAppService
         }
         catch (Exception e)
         {
-            CloseConnection();
             Console.WriteLine(e);
             throw new ProxyException(e);
         }
@@ -84,7 +84,7 @@ public class ServiceObjectProxy : ServiceObjectProxyBase,IAppService
 
     public void AddCazCaritabil(string nume, double sumaAdunata)
     {
-        InitializeConnection();
+        TestConnectionOpen();
         SendRequest(new AddCazCaritabilRequest(nume, sumaAdunata));
         try
         {
@@ -94,7 +94,6 @@ public class ServiceObjectProxy : ServiceObjectProxyBase,IAppService
         }
         catch (Exception e)
         {
-            CloseConnection();
             Console.WriteLine(e);
             throw new ProxyException(e);
         }
@@ -102,7 +101,7 @@ public class ServiceObjectProxy : ServiceObjectProxyBase,IAppService
 
     public void UpdateCazCaritabil(Guid id, string nume, double sumaAdunata)
     {
-        InitializeConnection();
+        TestConnectionOpen();
         SendRequest(new UpdateCazCaritabilRequest(id, nume, sumaAdunata));
         try
         {
@@ -112,7 +111,6 @@ public class ServiceObjectProxy : ServiceObjectProxyBase,IAppService
         }
         catch (Exception e)
         {
-            CloseConnection();
             Console.WriteLine(e);
             throw new ProxyException(e);
         }
@@ -120,7 +118,7 @@ public class ServiceObjectProxy : ServiceObjectProxyBase,IAppService
 
     public void AddDonator(string nume, string adresa, string telefon)
     {
-        InitializeConnection();
+        TestConnectionOpen();
         SendRequest(new AddDonatorRequest(nume, adresa, telefon));
         try
         {
@@ -130,7 +128,6 @@ public class ServiceObjectProxy : ServiceObjectProxyBase,IAppService
         }
         catch (Exception e)
         {
-            CloseConnection();
             Console.WriteLine(e);
             throw new ProxyException(e);
         }
@@ -138,7 +135,7 @@ public class ServiceObjectProxy : ServiceObjectProxyBase,IAppService
 
     public void UpdateDonator(Guid id, string nume, string adresa, string telefon)
     {
-        InitializeConnection();
+        TestConnectionOpen();
         SendRequest(new UpdateDonatorRequest(id, nume, adresa, telefon));
         try
         {
@@ -148,8 +145,20 @@ public class ServiceObjectProxy : ServiceObjectProxyBase,IAppService
         }
         catch (Exception e)
         {
-            CloseConnection();
             Console.WriteLine(e);
+            throw new ProxyException(e);
+        }
+    }
+    
+    protected override void HandleUpdate(UpdateResponse update)
+    {
+        Console.WriteLine("HandleUpdate called");
+        try
+        {
+            Client.Update();              
+        }
+        catch (Exception e)
+        {
             throw new ProxyException(e);
         }
     }

@@ -1,10 +1,11 @@
 ﻿using Charity.Domain;
+using Charity.Service.Observer;
 
 namespace Charity.Service;
 
 public interface IAppService
 {
-    public User Login(string username, string password);
+    public User Login(string username, string password,IObserver client);
     public IEnumerable<CazCaritabil> GetAllCazuri();
     public IEnumerable<Donator> GetDonators(String searchString);
     public void addDonation(Donator selectedDonor, CazCaritabil selectedCase, double v);

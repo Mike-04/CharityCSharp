@@ -32,6 +32,8 @@ public abstract class ServiceObjectProxyBase
             Host = host;
             Port = port;
         }
+        
+        protected abstract void HandleUpdate(UpdateResponse update);
 
         protected void CloseConnection()
         {
@@ -111,6 +113,12 @@ public abstract class ServiceObjectProxyBase
                 {
                     object response = Formatter.Deserialize(Stream);
                     Console.WriteLine($"Response Received : {response}");
+                    if (response is UpdateResponse)
+                    {              
+                        Console.WriteLine($"Received UpdateResponse : {response}");
+                        HandleUpdate(response as UpdateResponse);
+                    }
+                    else
                     {
                         lock (Responses)
                             Responses.Enqueue(response as IResponse);                        

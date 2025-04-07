@@ -46,9 +46,11 @@ namespace Charity
         {
                 try
                 {
-                    User user = service.Login(LoginUsername.Text, LoginPassword.Text);
-                    LoggedIn loggedin = new LoggedIn(user,service);
+                    LoggedIn loggedin = new LoggedIn(service);
+                    User user = service.Login(LoginUsername.Text, LoginPassword.Text,loggedin);
+                    loggedin.SetUser(user);
                     loggedin.Show();
+                    this.Hide();
                 }
                 catch (Exception ex)
                 {
