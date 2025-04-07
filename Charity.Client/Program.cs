@@ -26,5 +26,6 @@ static class Program
         });
         
         Application.Run(new Login(server));
+        
     }
 }

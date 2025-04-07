@@ -165,7 +165,11 @@ namespace Charity
 
         private void LoggedIn_FormClosed(object sender, FormClosedEventArgs e)
         {
-            // Handle form closed event if necessary
+            // Unsubscribe from the service
+            service.Logout(loggedUser.Username, this);
+            // close the application
+            Application.Exit();
+            
         }
     }
 }

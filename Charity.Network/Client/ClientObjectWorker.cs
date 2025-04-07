@@ -94,6 +94,17 @@ public class ClientObjectWorker : ClientObjectWorkerBase,IObserver
                 return new OkResponse();
             });
         }
+
+        if (request is LogoutUserRequest)
+        {
+            var name = (request as LogoutUserRequest).Username;
+            return ResponseOrError(() =>
+            {
+                service.Logout(name, this);
+                return new OkResponse();
+            });
+        }
+        
         return new ErrorResponse("Unknown request");
     }
 

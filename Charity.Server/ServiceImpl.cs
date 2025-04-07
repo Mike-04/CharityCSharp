@@ -7,7 +7,9 @@ namespace Charity.Server;
 internal class ServiceImpl : IAppService ,ISubject
 {
     private readonly IAppService innerService;
-    private readonly List<IObserver> observers = new List<IObserver>();
+    //map of users and their observers
+    private Dictionary<string, IObserver> observers = new Dictionary<string, IObserver>();
+    
     
     public ServiceImpl(IAppService innerService)
     {
@@ -19,7 +21,7 @@ internal class ServiceImpl : IAppService ,ISubject
         try
         {
             User user =innerService.Login(username, password,client);
-            RegisterObserver(client);
+            observers.Add(user.Username, client);
             Console.WriteLine($"User {username} logged in");
             //write the observer to console
             Console.WriteLine($"Observer {client.ToString()} registered");
@@ -122,21 +124,64 @@ internal class ServiceImpl : IAppService ,ISubject
         }
     }
 
+    public void Logout(String username, IObserver client)
+    {
+        try
+        {
+            innerService.Logout(username, client);
+            Console.WriteLine($"User {username} logged out");
+            //remove the observer from the map
+            if (observers.ContainsKey(username))
+            {
+                observers.Remove(username);
+                Console.WriteLine($"Observer {client.ToString()} unregistered");
+            }
+            else
+            {
+                Console.WriteLine($"Observer {client.ToString()} not found");
+            }
+
+        }
+        catch (Exception e)
+        {
+            throw new Exception("Logout failed", e);
+        }
+        finally
+        {
+            RemoveObserver(client);
+            //write the observer to console
+            //print the remaining observers
+            Console.WriteLine("Remaining observers:");
+            foreach (var observer in observers)
+            {
+                Console.WriteLine(observer.ToString());
+            }
+        }
+
+    }
+
     public void RegisterObserver(IObserver observer)
     {
-        observers.Add(observer);
+
     }
 
     public void RemoveObserver(IObserver observer)
     {
-        observers.Remove(observer);
     }
 
     public void NotifyObservers()
     {
-        foreach (var observer in observers)
+        foreach (var observer in observers.Values)
         {
-            observer.Update();
+            try
+            {
+                observer.Update();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Error notifying observer {observer.ToString()}: {e.Message}");
+            }
+            
         }
     }
 }

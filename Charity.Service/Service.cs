@@ -53,7 +53,7 @@ namespace Charity.Service
             DonatorService.Update(id, nume, adresa, telefon);
         }
 
-        public void Logout(String username,IObserver client)
+        public void Logout(String username, IObserver client = null)
         {
             return;
         }

@@ -13,4 +13,5 @@ public interface IAppService
     public void UpdateCazCaritabil(Guid id,string nume, double sumaAdunata);
     public void AddDonator(string nume, string adresa, string telefon);
     public void UpdateDonator(Guid id, string nume, string adresa, string telefon);
+    public void Logout(String username, IObserver client);
 }

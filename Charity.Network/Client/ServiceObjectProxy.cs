@@ -149,7 +149,26 @@ public class ServiceObjectProxy : ServiceObjectProxyBase,IAppService
             throw new ProxyException(e);
         }
     }
-    
+
+    public void Logout(String username, IObserver client)
+    {
+        InitializeConnection();
+        Client = client;
+        SendRequest(new LogoutUserRequest(username));
+        try
+        {
+            var resp = AwaitResponse<OkResponse>();
+            if (resp == null)
+                throw new ProxyException("Error Logging out user");
+        }
+        catch (Exception e)
+        {
+            CloseConnection();
+            Console.WriteLine(e);
+            throw new ProxyException(e);
+        }
+    }
+
     protected override void HandleUpdate(UpdateResponse update)
     {
         Console.WriteLine("HandleUpdate called");
