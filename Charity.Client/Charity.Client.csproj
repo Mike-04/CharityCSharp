@@ -16,5 +16,14 @@
       <ProjectReference Include="..\Charity.UI\Charity.UI.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Google.Protobuf" Version="3.31.0-rc1" />
+      <PackageReference Include="Grpc.AspNetCore.Server" Version="2.71.0" />
+      <PackageReference Include="Grpc.Tools" Version="2.71.0">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+    </ItemGroup>
+
     
 </Project>

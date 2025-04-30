@@ -173,15 +173,17 @@ internal class ServiceImpl : IAppService ,ISubject
     {
         foreach (var observer in observers.Values)
         {
-            try
+            Task.Run(() =>
             {
-                observer.Update();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine($"Error notifying observer {observer.ToString()}: {e.Message}");
-            }
-            
+                try
+                {
+                    observer.Update();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine($"Error notifying observer {observer.ToString()}: {e.Message}");
+                }
+            });
         }
     }
 }

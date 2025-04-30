@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "GbFllIi7nk4=",
+  "dgSpecHash": "1RNRWL0Oeik=",
   "success": true,
   "projectFilePath": "C:\\Users\\White Fox\\RiderProjects\\Charity\\Charity.Network\\Charity.Network.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,11 @@
     "C:\\Users\\White Fox\\.nuget\\packages\\ado.net.client.core\\1.4.5\\ado.net.client.core.1.4.5.nupkg.sha512",
     "C:\\Users\\White Fox\\.nuget\\packages\\ado.net.client.implementation\\1.4.4\\ado.net.client.implementation.1.4.4.nupkg.sha512",
     "C:\\Users\\White Fox\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
+    "C:\\Users\\White Fox\\.nuget\\packages\\google.protobuf\\3.31.0-rc1\\google.protobuf.3.31.0-rc1.nupkg.sha512",
+    "C:\\Users\\White Fox\\.nuget\\packages\\grpc.aspnetcore.server\\2.71.0\\grpc.aspnetcore.server.2.71.0.nupkg.sha512",
+    "C:\\Users\\White Fox\\.nuget\\packages\\grpc.core.api\\2.71.0\\grpc.core.api.2.71.0.nupkg.sha512",
+    "C:\\Users\\White Fox\\.nuget\\packages\\grpc.net.common\\2.71.0\\grpc.net.common.2.71.0.nupkg.sha512",
+    "C:\\Users\\White Fox\\.nuget\\packages\\grpc.tools\\2.71.0\\grpc.tools.2.71.0.nupkg.sha512",
     "C:\\Users\\White Fox\\.nuget\\packages\\jackletter.microsoft.extensions.logging.file\\2.1.0\\jackletter.microsoft.extensions.logging.file.2.1.0.nupkg.sha512",
     "C:\\Users\\White Fox\\.nuget\\packages\\messagepack\\3.1.3\\messagepack.3.1.3.nupkg.sha512",
     "C:\\Users\\White Fox\\.nuget\\packages\\messagepack.annotations\\3.1.3\\messagepack.annotations.3.1.3.nupkg.sha512",

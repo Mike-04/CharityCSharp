@@ -13,6 +13,12 @@
 
     <ItemGroup>
       <PackageReference Include="ADO.Net.Client" Version="1.4.4" />
+      <PackageReference Include="Google.Protobuf" Version="3.31.0-rc1" />
+      <PackageReference Include="Grpc.AspNetCore.Server" Version="2.71.0" />
+      <PackageReference Include="Grpc.Tools" Version="2.71.0">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
       <PackageReference Include="Jackletter.Microsoft.Extensions.Logging.File" Version="2.1.0" />
       <PackageReference Include="Microsoft.Extensions.Configuration" Version="10.0.0-preview.2.25163.2" />
       <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="10.0.0-preview.2.25163.2" />

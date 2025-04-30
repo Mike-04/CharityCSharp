@@ -54,6 +54,20 @@
               "target": "Package",
               "version": "[1.4.4, )"
             },
+            "Google.Protobuf": {
+              "target": "Package",
+              "version": "[3.31.0-rc1, )"
+            },
+            "Grpc.AspNetCore.Server": {
+              "target": "Package",
+              "version": "[2.71.0, )"
+            },
+            "Grpc.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.71.0, )"
+            },
             "Jackletter.Microsoft.Extensions.Logging.File": {
               "target": "Package",
               "version": "[2.1.0, )"

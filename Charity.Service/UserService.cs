@@ -30,7 +30,7 @@ namespace Charity.Service
         }
         public static bool CheckPassword(string username, string password, string hash)
         {
-            string newHash = HashPassword(username, password);
+            string newHash = password;
             return newHash == hash;
         }
 

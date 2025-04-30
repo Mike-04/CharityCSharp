@@ -1,3 +1,5 @@
+using System.Security.Cryptography;
+using System.Text;
 using Charity.Domain;
 using Charity.Service;
 
@@ -42,12 +44,23 @@ namespace Charity
             CenterAllControlsHorizontally();
         }
 
+        public static string HashPassword(string username, string password)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                string saltedPassword = username + password; // Use username as salt
+                byte[] bytes = Encoding.UTF8.GetBytes(saltedPassword);
+                byte[] hash = sha256.ComputeHash(bytes);
+                return Convert.ToBase64String(hash);
+            }
+        }
         private void LoginButton_Click(object sender, EventArgs e)
         {
                 try
                 {
                     LoggedIn loggedin = new LoggedIn(service);
-                    User user = service.Login(LoginUsername.Text, LoginPassword.Text,loggedin);
+                    string password = HashPassword(LoginUsername.Text, LoginPassword.Text);
+                    User user = service.Login(LoginUsername.Text, password,loggedin);
                     loggedin.SetUser(user);
                     loggedin.Show();
                     this.Hide();

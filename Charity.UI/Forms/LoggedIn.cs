@@ -167,9 +167,23 @@ namespace Charity
         {
             // Unsubscribe from the service
             service.Logout(loggedUser.Username, this);
+            // close all forms
+            Console.WriteLine("Logged out");
+                        
+            Environment.Exit(0);
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form != this)
+                {
+                    form.Close();
+                }
+            }
+            
             // close the application
             Application.Exit();
-            
+            //print the message
+
+
         }
     }
 }
