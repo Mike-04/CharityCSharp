@@ -3341,11 +3341,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\White Fox\\RiderProjects\\Charity\\Charity.Network\\Charity.Network.csproj",
+      "projectUniqueName": "C:\\Users\\White Fox\\Documents\\MPP\\CharityCSharp\\Charity.Network\\Charity.Network.csproj",
       "projectName": "Charity.Network",
-      "projectPath": "C:\\Users\\White Fox\\RiderProjects\\Charity\\Charity.Network\\Charity.Network.csproj",
+      "projectPath": "C:\\Users\\White Fox\\Documents\\MPP\\CharityCSharp\\Charity.Network\\Charity.Network.csproj",
       "packagesPath": "C:\\Users\\White Fox\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\White Fox\\RiderProjects\\Charity\\Charity.Network\\obj\\",
+      "outputPath": "C:\\Users\\White Fox\\Documents\\MPP\\CharityCSharp\\Charity.Network\\obj\\",
       "projectStyle": "PackageReference",
       "UsingMicrosoftNETSdk": false,
       "fallbackFolders": [
@@ -3367,11 +3367,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\White Fox\\RiderProjects\\Charity\\Charity.Domain\\Charity.Domain.csproj": {
-              "projectPath": "C:\\Users\\White Fox\\RiderProjects\\Charity\\Charity.Domain\\Charity.Domain.csproj"
+            "C:\\Users\\White Fox\\Documents\\MPP\\CharityCSharp\\Charity.Domain\\Charity.Domain.csproj": {
+              "projectPath": "C:\\Users\\White Fox\\Documents\\MPP\\CharityCSharp\\Charity.Domain\\Charity.Domain.csproj"
             },
-            "C:\\Users\\White Fox\\RiderProjects\\Charity\\Charity.Service\\Charity.Service.csproj": {
-              "projectPath": "C:\\Users\\White Fox\\RiderProjects\\Charity\\Charity.Service\\Charity.Service.csproj"
+            "C:\\Users\\White Fox\\Documents\\MPP\\CharityCSharp\\Charity.Service\\Charity.Service.csproj": {
+              "projectPath": "C:\\Users\\White Fox\\Documents\\MPP\\CharityCSharp\\Charity.Service\\Charity.Service.csproj"
             }
           }
         }

@@ -1,0 +1,3 @@
+obj\Debug\net8.0/Charity.cs \
+obj\Debug\net8.0/CharityGrpc.cs: C:/Users/White Fox/.nuget/packages/grpc.tools/2.71.0/build/native/include/google/protobuf/empty.proto\
+ C:/Users/White Fox/Documents/MPP/Common/charity.proto

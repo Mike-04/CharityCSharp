@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\White Fox\\RiderProjects\\Charity\\Charity.Domain\\Charity.Domain.csproj": {}
+    "C:\\Users\\White Fox\\Documents\\MPP\\CharityCSharp\\Charity.Domain\\Charity.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\White Fox\\RiderProjects\\Charity\\Charity.Domain\\Charity.Domain.csproj": {
+    "C:\\Users\\White Fox\\Documents\\MPP\\CharityCSharp\\Charity.Domain\\Charity.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\White Fox\\RiderProjects\\Charity\\Charity.Domain\\Charity.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\White Fox\\Documents\\MPP\\CharityCSharp\\Charity.Domain\\Charity.Domain.csproj",
         "projectName": "Charity.Domain",
-        "projectPath": "C:\\Users\\White Fox\\RiderProjects\\Charity\\Charity.Domain\\Charity.Domain.csproj",
+        "projectPath": "C:\\Users\\White Fox\\Documents\\MPP\\CharityCSharp\\Charity.Domain\\Charity.Domain.csproj",
         "packagesPath": "C:\\Users\\White Fox\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\White Fox\\RiderProjects\\Charity\\Charity.Domain\\obj\\",
+        "outputPath": "C:\\Users\\White Fox\\Documents\\MPP\\CharityCSharp\\Charity.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "UsingMicrosoftNETSdk": false,
         "fallbackFolders": [

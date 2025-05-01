@@ -10,6 +10,7 @@
     <ItemGroup>
       <ProjectReference Include="..\Charity.Domain\Charity.Domain.csproj" />
       <ProjectReference Include="..\Charity.Service\Charity.Service.csproj" />
+        <Protobuf Include="C:\Users\White Fox\Documents\MPP\Common\charity.proto" GrpcServices="Server" />
     </ItemGroup>
 
     <ItemGroup>

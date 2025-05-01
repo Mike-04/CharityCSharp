@@ -3388,11 +3388,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\White Fox\\RiderProjects\\Charity\\Charity.Client\\Charity.Client.csproj",
+      "projectUniqueName": "C:\\Users\\White Fox\\Documents\\MPP\\CharityCSharp\\Charity.Client\\Charity.Client.csproj",
       "projectName": "Charity.Client",
-      "projectPath": "C:\\Users\\White Fox\\RiderProjects\\Charity\\Charity.Client\\Charity.Client.csproj",
+      "projectPath": "C:\\Users\\White Fox\\Documents\\MPP\\CharityCSharp\\Charity.Client\\Charity.Client.csproj",
       "packagesPath": "C:\\Users\\White Fox\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\White Fox\\RiderProjects\\Charity\\Charity.Client\\obj\\",
+      "outputPath": "C:\\Users\\White Fox\\Documents\\MPP\\CharityCSharp\\Charity.Client\\obj\\",
       "projectStyle": "PackageReference",
       "UsingMicrosoftNETSdk": false,
       "fallbackFolders": [
@@ -3414,17 +3414,17 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "C:\\Users\\White Fox\\RiderProjects\\Charity\\Charity.Domain\\Charity.Domain.csproj": {
-              "projectPath": "C:\\Users\\White Fox\\RiderProjects\\Charity\\Charity.Domain\\Charity.Domain.csproj"
+            "C:\\Users\\White Fox\\Documents\\MPP\\CharityCSharp\\Charity.Domain\\Charity.Domain.csproj": {
+              "projectPath": "C:\\Users\\White Fox\\Documents\\MPP\\CharityCSharp\\Charity.Domain\\Charity.Domain.csproj"
             },
-            "C:\\Users\\White Fox\\RiderProjects\\Charity\\Charity.Network\\Charity.Network.csproj": {
-              "projectPath": "C:\\Users\\White Fox\\RiderProjects\\Charity\\Charity.Network\\Charity.Network.csproj"
+            "C:\\Users\\White Fox\\Documents\\MPP\\CharityCSharp\\Charity.Network\\Charity.Network.csproj": {
+              "projectPath": "C:\\Users\\White Fox\\Documents\\MPP\\CharityCSharp\\Charity.Network\\Charity.Network.csproj"
             },
-            "C:\\Users\\White Fox\\RiderProjects\\Charity\\Charity.Service\\Charity.Service.csproj": {
-              "projectPath": "C:\\Users\\White Fox\\RiderProjects\\Charity\\Charity.Service\\Charity.Service.csproj"
+            "C:\\Users\\White Fox\\Documents\\MPP\\CharityCSharp\\Charity.Service\\Charity.Service.csproj": {
+              "projectPath": "C:\\Users\\White Fox\\Documents\\MPP\\CharityCSharp\\Charity.Service\\Charity.Service.csproj"
             },
-            "C:\\Users\\White Fox\\RiderProjects\\Charity\\Charity.UI\\Charity.UI.csproj": {
-              "projectPath": "C:\\Users\\White Fox\\RiderProjects\\Charity\\Charity.UI\\Charity.UI.csproj"
+            "C:\\Users\\White Fox\\Documents\\MPP\\CharityCSharp\\Charity.UI\\Charity.UI.csproj": {
+              "projectPath": "C:\\Users\\White Fox\\Documents\\MPP\\CharityCSharp\\Charity.UI\\Charity.UI.csproj"
             }
           }
         }

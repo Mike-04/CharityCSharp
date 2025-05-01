@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lds2zBQUinM=",
+  "dgSpecHash": "bYQ75JtetnY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\White Fox\\RiderProjects\\Charity\\Charity.Server\\Charity.Server.csproj",
+  "projectFilePath": "C:\\Users\\White Fox\\Documents\\MPP\\CharityCSharp\\Charity.Server\\Charity.Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\White Fox\\.nuget\\packages\\ado.net.client\\1.4.4\\ado.net.client.1.4.4.nupkg.sha512",
     "C:\\Users\\White Fox\\.nuget\\packages\\ado.net.client.annotations\\1.2.0\\ado.net.client.annotations.1.2.0.nupkg.sha512",

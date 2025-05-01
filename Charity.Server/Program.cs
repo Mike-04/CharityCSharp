@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection;
+using Charity.Network.gRpc;
 using Charity.Repo;
 using Charity.Service;
 using Microsoft.Extensions.Configuration;
@@ -64,8 +65,8 @@ internal class Program
         Service.Service service = new Service.Service(userService, cazCaritabilService,donatorService, donatieService);
         
         
-        var server = new Server(host, int.Parse(port), new ServiceImpl(service));
-        server.Start();
+        var server = new RpcServer(new RpcService(service), int.Parse(port),host);
+        server.run();
         
         Console.WriteLine($"Server started on {host}:{port}");
         Console.WriteLine("Press any key to stop the server...");

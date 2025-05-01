@@ -11,7 +11,10 @@
           "Charity.Domain": "1.0.0",
           "Charity.Network": "1.0.0",
           "Charity.Service": "1.0.0",
-          "Charity.UI": "1.0.0"
+          "Charity.UI": "1.0.0",
+          "Google.Protobuf": "3.31.0-rc1",
+          "Grpc.AspNetCore.Server": "2.71.0",
+          "Grpc.Tools": "2.71.0"
         },
         "runtime": {
           "Charity.Client.dll": {}
@@ -77,6 +80,45 @@
           }
         }
       },
+      "Google.Protobuf/3.31.0-rc1": {
+        "runtime": {
+          "lib/net5.0/Google.Protobuf.dll": {
+            "assemblyVersion": "3.31.0.0",
+            "fileVersion": "3.31.0.0"
+          }
+        }
+      },
+      "Grpc.AspNetCore.Server/2.71.0": {
+        "dependencies": {
+          "Grpc.Net.Common": "2.71.0"
+        },
+        "runtime": {
+          "lib/net8.0/Grpc.AspNetCore.Server.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.71.0.0"
+          }
+        }
+      },
+      "Grpc.Core.Api/2.71.0": {
+        "runtime": {
+          "lib/netstandard2.1/Grpc.Core.Api.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.71.0.0"
+          }
+        }
+      },
+      "Grpc.Net.Common/2.71.0": {
+        "dependencies": {
+          "Grpc.Core.Api": "2.71.0"
+        },
+        "runtime": {
+          "lib/net8.0/Grpc.Net.Common.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.71.0.0"
+          }
+        }
+      },
+      "Grpc.Tools/2.71.0": {},
       "Jackletter.Microsoft.Extensions.Logging.File/2.1.0": {
         "dependencies": {
           "Microsoft.Extensions.Logging": "10.0.0-preview.2.25163.2",
@@ -624,6 +666,8 @@
       "Charity.Domain/1.0.0": {
         "dependencies": {
           "ADO.Net.Client": "1.4.4",
+          "Google.Protobuf": "3.31.0-rc1",
+          "Grpc.AspNetCore.Server": "2.71.0",
           "Jackletter.Microsoft.Extensions.Logging.File": "2.1.0",
           "Microsoft.Extensions.Configuration": "10.0.0-preview.2.25163.2",
           "Microsoft.Extensions.Configuration.FileExtensions": "10.0.0-preview.2.25163.2",
@@ -646,6 +690,8 @@
         "dependencies": {
           "Charity.Domain": "1.0.0",
           "Charity.Service": "1.0.0",
+          "Google.Protobuf": "3.31.0-rc1",
+          "Grpc.AspNetCore.Server": "2.71.0",
           "MessagePack": "3.1.3",
           "Microsoft.Extensions.Configuration.Json": "10.0.0-preview.2.25163.2"
         },
@@ -660,6 +706,8 @@
         "dependencies": {
           "ADO.Net.Client": "1.4.4",
           "Charity.Domain": "1.0.0",
+          "Google.Protobuf": "3.31.0-rc1",
+          "Grpc.AspNetCore.Server": "2.71.0",
           "Jackletter.Microsoft.Extensions.Logging.File": "2.1.0",
           "Microsoft.Extensions.Configuration": "10.0.0-preview.2.25163.2",
           "Microsoft.Extensions.Configuration.FileExtensions": "10.0.0-preview.2.25163.2",
@@ -682,6 +730,8 @@
         "dependencies": {
           "Charity.Domain": "1.0.0",
           "Charity.Repo": "1.0.0",
+          "Google.Protobuf": "3.31.0-rc1",
+          "Grpc.AspNetCore.Server": "2.71.0",
           "Microsoft.Extensions.Configuration.Json": "10.0.0-preview.2.25163.2"
         },
         "runtime": {
@@ -694,7 +744,9 @@
       "Charity.UI/1.0.0": {
         "dependencies": {
           "Charity.Domain": "1.0.0",
-          "Charity.Service": "1.0.0"
+          "Charity.Service": "1.0.0",
+          "Google.Protobuf": "3.31.0-rc1",
+          "Grpc.AspNetCore.Server": "2.71.0"
         },
         "runtime": {
           "Charity.UI.dll": {
@@ -745,6 +797,41 @@
       "sha512": "sha512-yj1+/4tci7Panu3jKDHYizxwVm0Jvm7b7m057b5h4u8NUHGCR8WIWirBTw+8EptRffwftIWPBeIRGNKD1ewEMQ==",
       "path": "entityframework/6.4.4",
       "hashPath": "entityframework.6.4.4.nupkg.sha512"
+    },
+    "Google.Protobuf/3.31.0-rc1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iwmQNvSvH4zgPW9jxht00dofwgnnGgThKbHs9e2oOamWbPaxqGwuMOWDdLOVK5dMORuadymM4nJQ8w+N55tMgA==",
+      "path": "google.protobuf/3.31.0-rc1",
+      "hashPath": "google.protobuf.3.31.0-rc1.nupkg.sha512"
+    },
+    "Grpc.AspNetCore.Server/2.71.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kv+9YVB6MqDYWIcstXvWrT7Xc1si/sfINzzSxvQfjC3aei+92gXDUXCH/Q+TEvi4QSICRqu92BYcrXUBW7cuOw==",
+      "path": "grpc.aspnetcore.server/2.71.0",
+      "hashPath": "grpc.aspnetcore.server.2.71.0.nupkg.sha512"
+    },
+    "Grpc.Core.Api/2.71.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QquqUC37yxsDzd1QaDRsH2+uuznWPTS8CVE2Yzwl3CvU4geTNkolQXoVN812M2IwT6zpv3jsZRc9ExJFNFslTg==",
+      "path": "grpc.core.api/2.71.0",
+      "hashPath": "grpc.core.api.2.71.0.nupkg.sha512"
+    },
+    "Grpc.Net.Common/2.71.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-v0c8R97TwRYwNXlC8GyRXwYTCNufpDfUtj9la+wUrZFzVWkFJuNAltU+c0yI3zu0jl54k7en6u2WKgZgd57r2Q==",
+      "path": "grpc.net.common/2.71.0",
+      "hashPath": "grpc.net.common.2.71.0.nupkg.sha512"
+    },
+    "Grpc.Tools/2.71.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-r8zHZm7kHdMrtujnkcuQ0BNDH2969at/8Va1ZzQgVblaQzR7tm8JlA3G+5Z5IFbvvf9PcAr1/VcoSR+g7j4Nyw==",
+      "path": "grpc.tools/2.71.0",
+      "hashPath": "grpc.tools.2.71.0.nupkg.sha512"
     },
     "Jackletter.Microsoft.Extensions.Logging.File/2.1.0": {
       "type": "package",

@@ -1,6 +1,5 @@
 ﻿using Charity.Network.DTO;
 using System;
-using Charity.Network.DTO;
 
 namespace Charity.Network.ObjectProtocol
 {
